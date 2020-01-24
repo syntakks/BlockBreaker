@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    private List<GameObject> blocks = new List<GameObject>();
+    private List<GameObject> blocks = new List<GameObject>(); 
 
     public void AddBlock(GameObject block)
     {
@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
         {
             blocks.Add(block); 
         }
+        Debug.Log("Block Count: " + blocks.Count); 
     }
 
     public void RemoveBlock(GameObject block)

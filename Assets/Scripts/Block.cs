@@ -18,7 +18,8 @@ public class Block : MonoBehaviour
             // Ball Hit
             //Debug.Log("Ball Hit!"); 
             Destroy(gameObject, 1f);
-            FindObjectOfType<LevelManager>().RemoveBlock(gameObject); 
+            FindObjectOfType<LevelManager>().RemoveBlock(gameObject);
+            FindObjectOfType<GameStatus>().AddToScore(); 
             AudioSource.PlayClipAtPoint(destroyBlockSound, Camera.main.transform.position); 
         }
     }

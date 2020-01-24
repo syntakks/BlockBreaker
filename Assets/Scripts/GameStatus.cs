@@ -11,6 +11,7 @@ public class GameStatus : MonoBehaviour
     //State
     [SerializeField] int currentScore = 0;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] public bool autoPlay = false; 
 
     private void Awake()
     {

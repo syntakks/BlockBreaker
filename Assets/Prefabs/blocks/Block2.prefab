@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2016889601509118594}
   - component: {fileID: 2016889601509118595}
   m_Layer: 0
-  m_Name: Breakable Block
+  m_Name: Block2
   m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e3994d80422724b408253acd775eb41f, type: 3}
-  m_Color: {r: 1, g: 0.44427156, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.53415036, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -120,5 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90718b8df1d0c2e47819f39d97896ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  threePlusHealthSprite: {fileID: 0}
+  twoHealthSprite: {fileID: 21300000, guid: 94b0dbd525e8b6e4a947a20b427033c7, type: 3}
+  oneHealthSprite: {fileID: 21300000, guid: 31b0235b90f3f234ca42efbe404f5724, type: 3}
   destroyBlockSound: {fileID: 8300000, guid: ffc2aabb02de4aa4ab6d2e810bbaf733, type: 3}
   blockVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  blockHealth: 2

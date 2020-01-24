@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    //TODO threePlusHealthSprite for regenerating Health, Some dickhead comes along and heals the blocks haha Gotta kill them quickly. 
+    //TODO Create particle effect for healing
+
+    [SerializeField] Sprite threePlusHealthSprite; 
+    [SerializeField] Sprite twoHealthSprite;
+    [SerializeField] Sprite oneHealthSprite; 
     [SerializeField] AudioClip destroyBlockSound;
-    [SerializeField] GameObject blockVFX; 
+    [SerializeField] GameObject blockVFX;
+    [SerializeField] int blockHealth = 3; 
+
 
     private void Awake()
     {
@@ -21,17 +29,35 @@ public class Block : MonoBehaviour
         {
             if (tag == "Breakable")
             {
+                blockHealth--;
+                UpdateBlockSprite(); 
                 DestroyBlock();
             }
         }
     }
 
+    private void UpdateBlockSprite()
+    {
+        switch (blockHealth)
+        {
+            case 2:
+                gameObject.GetComponent<SpriteRenderer>().sprite = twoHealthSprite; 
+                break;
+            case 1:
+                gameObject.GetComponent<SpriteRenderer>().sprite = oneHealthSprite;
+                break; 
+        }
+    }
+
     private void DestroyBlock()
     {
-        TriggerDestroyBlockSound();
-        TriggerSparklesVFX();
-        RemoveBlock();
-        UpdateScore();
+        if (blockHealth < 1)
+        {
+            TriggerDestroyBlockSound();
+            TriggerSparklesVFX();
+            RemoveBlock();
+            UpdateScore();
+        }
     }
 
     private void TriggerSparklesVFX()
